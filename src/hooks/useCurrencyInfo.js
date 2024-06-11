@@ -2,11 +2,12 @@ import { useState,useEffect } from "react";
 
 
 function useCurrencyInfo(){
-        const currency ='inr'
+    const currency=""
         const [data,setData]= useState({})
         useEffect(()=>{
             fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`)
             .then((res)=> res.json())
+            
             
             .then((res)=> setData(res[currency]))
             // 
@@ -17,5 +18,6 @@ function useCurrencyInfo(){
 };
 
  export default useCurrencyInfo ;
+
 
  

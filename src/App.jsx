@@ -8,11 +8,11 @@ import './App.css'
 function App() {
 
     const [amount, setAmount] = useState(0)
-    const [from, setFrom] = useState("usd")
-    const [to, setTo] = useState("inr")
+    const [from, setFrom] = useState("")
+    const [to, setTo] = useState("")
     const [convertedAmount, setConvertedAmount] = useState(0)
   
-    const currencyInfo = useCurrencyInfo(from)
+    const currencyInfo = useCurrencyInfo(to)
   
     const options = Object.keys(currencyInfo)
   
@@ -29,7 +29,7 @@ function App() {
   
     return (
       <div
-          className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+          className="w-full h-screen flex flex-wrap  items-center bg-cover bg-no-repeat align-middle justify-center bg-center"
           style={{
               backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
           }}
@@ -49,7 +49,7 @@ function App() {
                               amount={amount}
                               currencyOptions={options}
                               onCurrencyChange={(currency) => setAmount(amount)}
-                              selectCurrency={from}
+                              selectCurrency={to}
                               onAmountChange={(amount) => setAmount(amount)}
                           />
                       </div>
